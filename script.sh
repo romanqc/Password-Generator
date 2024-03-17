@@ -14,7 +14,8 @@ generate_password() {
     if [ "$include_symbols" = true ]; then
         characters+='!@#$%^&*()_-'
     fi
-
+    
+    # Generates a random string of characters using /dev/urandom and character filtering.
     < /dev/urandom tr -dc "$characters" | head -c "$length"
 }
 
